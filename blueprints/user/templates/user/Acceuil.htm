@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('user.static',filename='style/styleAc.css') }}">
+    <title>Document</title>
+</head>
+<body>
+<!-- Menu responsible -->
+    <div class="vol">
+        <img src="{{ url_for('user.static',filename='image/icons8-plus-30.png') }}" alt="b">
+        <div class="user">
+            <img src="{{ url_for('user.static',filename='image/icons8-utilisateur-24.png') }}" alt="user">
+            <p>{% if session['user'] %}<a href="{{ url_for('user.profile') }}">{{session['user']['nom'] | upper}} {{session['user']['prenom'] | upper}}</a> {% else %} <a href="{{ url_for('user.connection') }}">User</a>{% endif %}</p>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('user.home') }}" class="actif">Acceuil</a></li>
+            <li><a href="{{ url_for('user.maisons') }}">Maisons</a></li>
+            <li><a href="{{ url_for('user.contact') }}">Contact</a></li>
+        </ul>    
+    </div>
+
+<!-- header  -->
+
+    <div class="dessus">
+        <h2>LOGO</h2>
+        <img src="{{ url_for('user.static',filename='/image/icons8-menu-arrondi-50.png') }}" alt="">
+        <form action="">
+            <input type="search" name="" id=""></p>
+            <img src="{{ url_for('user.static',filename='image/icons8-chercher-24.png') }}" for="search" alt="coco">
+            <input type="submit" value="" id="search" style="display: none;">
+        </form>
+        <div class="user">
+            <img src="{{ url_for('user.static',filename='image/icons8-utilisateur-24.png') }}" alt="user">
+            <p>{% if session['user'] %}<a href="{{ url_for('user.profile') }}">{{session['user']['nom'] | upper}} {{session['user']['prenom'] | upper}}</a> {% else %} <a href="{{ url_for('user.connection') }}">User</a>{% endif %}</p>
+        </div>
+    </div>
+
+<!-- Menu de navigation -->
+
+    <ul class="grand">
+        <li><a href="{{ url_for('user.home') }}" class="actif">Acceuil</a></li>
+        <li><a href="{{ url_for('user.maisons') }}">Maisons</a></li>
+        <li><a href="{{ url_for('user.contact') }}">Contact</a></li>
+    </ul>
+    
+<!-- presentation de la visite 3d  -->
+
+    <div class="decouvert">
+        <div class="color_background"> </div>
+        <div class="info">
+            <h1>Visite Virtuelle</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt interdum tincidunt. Integer ac pretium nisl. Donec at ante sit amet orci ullamcorper fermentum eu ac dolor</p>
+        </div>
+    </div>
+
+<!-- section contenant les maisons -->
+
+    <section>
+        <h2>Nos Maisons</h2>
+        {% for maison in maisons %}
+        <article>
+            <div class="image">
+                <img src="{{ url_for('admin.static',filename='uploads/'+maison.titre+'/'+maison.photo) }}" alt="maison">
+                <div class="vole">
+                    <div class="haut">A louer</div>
+                    <div class="prix"> {{maison.prix}} fcfa</div>
+                </div>
+            </div>
+            <div class="article_info">
+                <div class="agence"><img src="{{ url_for('user.static',filename='image/icons8-utilisateur-24.png') }}" alt="Agence"><p>Agence</p></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="lieu"><div><img src="{{ url_for('user.static',filename='image/icons8-location-64.png') }}" alt="lieu"><p>{{ maison.longitude }}-{{ maison.lartitude }}</p></div><p><a href="{{ url_for('user.detail',id=maison.id) }}">Voir Plus</a></p></div>
+            </div>
+        </article>
+        {% endfor %}
+        <div class="btn"><a href="">Voir PLus</a></div>
+    </section>
+
+<!-- section des commentaires sur le site -->
+    <section>
+        <h2>Nos Internautes</h2>
+        {% for commentaire in commentaires %}
+        <div class="conteneur">
+            <img src="{{ url_for('user.static',filename='image/pexels-max-vakhtbovych-8134848.jpg') }}" alt="">
+            <h3>N'da Marion</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, eligendi?</p>
+        </div>
+        {% endfor %}
+    </section>
+    
+
+<!-- section des info sur le site -->
+
+    <div class="avant_foot">
+        <div class="color_background"></div>
+        <div class="info_foot">
+            <h1>LOGO</h1>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p>Mail :HomeSearch@gmail.com</p>
+                <p>Tel :0748569941/0546283701</p>
+                <p>Localisation : Abidjan zone 4</p>
+            </div>
+            <form action="{{ url_for('user.envoi') }}" method="POST">
+                {{form.hidden_tag()}}
+                <h3>Commentaire</h3>
+                <p>{{form.contenu}}</p>
+                <p>{{form.submit}}</p>
+            </form>
+        </div>
+    </div>
+
+<!-- footer -->
+
+    <footer>
+        <p><a href="#"><img src="{{ url_for('user.static',filename='image/icons8-f-de-facebook-30.png') }}" alt="facebook"></a></p>
+        <p><a href="#"><img src="{{ url_for('user.static',filename='image/icons8-instagram-30.png') }}" alt="insta"></a></p>
+        <p><a href="#"><img src="{{ url_for('user.static',filename='image/icons8-twitter-30.png') }}" alt="twinter"></a></p>
+    </footer>
+    <script src="{{ url_for('user.static', filename='js/menu.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style/StyleDe.css">
+</head>
+<body>
+    <!-- Menu responsible -->
+    <div class="vol">
+        <img src="{{ url_for('user.static',filename='image/icons8-plus-30.png') }}" alt="b">
+        <div class="user">
+            <img src="{{ url_for('user.static',filename='image/icons8-utilisateur-24.png') }}" alt="user">
+            <p>{% if session['user'] %}<a href="{{ url_for('user.profile') }}">{{session['user']['nom'] | upper}} {{session['user']['prenom'] | upper}}</a> {% else %} <a href="{{ url_for('user.connection') }}">User</a>{% endif %}</p>
+        </div>
+        <ul>
+            <li><a href="{{ url_for('user.home') }}" class="actif">Acceuil</a></li>
+            <li><a href="{{ url_for('user.maisons') }}">Maisons</a></li>
+            <li><a href="{{ url_for('user.contact') }}">Contact</a></li>
+        </ul>    
+    </div>
+
+    <!-- header  -->
+
+    <div class="dessus">
+        <h2>LOGO</h2>
+        <img src="{{ url_for('user.static',filename='/image/icons8-menu-arrondi-50.png') }}" alt="">
+        <form action="">
+            <input type="search" name="" id=""></p>
+            <img src="{{ url_for('user.static',filename='image/icons8-chercher-24.png') }}" for="search" alt="coco">
+            <input type="submit" value="" id="search" style="display: none;">
+        </form>
+        <div class="user">
+            <img src="{{ url_for('user.static',filename='image/icons8-utilisateur-24.png') }}" alt="user">
+            <p>{% if session['user'] %}<a href="{{ url_for('user.profile') }}">{{session['user']['nom'] | upper}} {{session['user']['prenom'] | upper}}</a> {% else %} <a href="{{ url_for('user.connection') }}">User</a>{% endif %}</p>
+        </div>
+    </div>
+
+    <!-- Menu de navigation -->
+
+    <ul class="grand">
+        <li><a href="{{ url_for('user.home') }}" class="actif">Acceuil</a></li>
+        <li><a href="{{ url_for('user.maisons') }}">Maisons</a></li>
+        <li><a href="{{ url_for('user.contact') }}">Contact</a></li>
+    </ul>
+
+    <section class="apropros">
+        <div class="gauche">
+            <p><a href="{{ url_for('user.vue',id=maison.id) }}"><img src="../static/image/icons8-3d-50 (1).png" alt="">Visualiser</a></p>
+            <div class="prix">
+                <h3>Prix</h3>
+                <p>{{ maison.prix }} fcfa</p>
+            </div>
+            <div class="b">
+                <h3>Plus De Detail</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, reprehenderit sequi aperiam cupiditate quis pariatur.</p>
+            </div>
+            <div class="info_agence">
+                <h3>Agence</h3>
+                <div class="dedans">
+                    <div>
+                        <img src="../static/image/icons8-utilisateur-24 (1).png" alt="agence">
+                        <h4>Nom</h4>
+                    </div>
+                    <div class="agence_contact">
+                        <p><img src="../static/image/icons8-téléphone-30 (1).png" alt="">074659941</p>
+                        <p><img src="../static/image/icons8-fenêtre-dapplication-50.png" alt="">Siteagence.com</p>
+                        <p><img src="../static/image/icons8-courrier-24.png" alt="">Mailagencegamil.com</p>
+                    </div>
+                    <p><a href="#">Prendre rendez-vous</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="droit">
+            <img src="{{ url_for('admin.static',filename='uploads/'+maison.titre+'/'+maison.photo) }}" alt="maison">
+            <div class="descrisption">
+                <h3>Description De La Maison</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, iusto dolore sit veniam quam mollitia nulla incidunt nam deleniti, vero consequuntur sapiente accusamus. Aspernatur, fugit dolor eos itaque dolorum nisi.</p>
+            </div>
+            <div class="maison_lieu">
+                <h3>Localisation</h3>
+                <img src="../static/image/GoogleMapTA.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="avis">
+        <h2>Avis Du Voisinage</h2>
+        <div class="conteneur">
+            <img src="../static/image/pexels-max-vakhtbovych-8134848.jpg" alt="">
+            <h3>N'da Marion</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, eligendi?</p>
+        </div>
+        <div class="conteneur">
+            <img src="../static/image/pexels-max-vakhtbovych-8134848.jpg" alt="">
+            <h3>N'da Marion</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, eligendi?</p>
+        </div>
+        <div class="conteneur">
+            <img src="../static/image/pexels-max-vakhtbovych-8134848.jpg" alt="">
+            <h3>N'da Marion</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, eligendi?</p>
+        </div>
+    </section>
+    <section class="plus_maisons">
+        <h2>Nos Maisons</h2>
+        {% for maiso in maisons %}
+        <article>
+            <div class="image">
+                <img src="{{ url_for('admin.static',filename='uploads/'+maiso.titre+'/'+maiso.photo) }}" alt="maison">
+                <div class="vole">
+                    <div class="haut">A louer</div>
+                    <div class="prix"> {{maiso.prix}} fcfa</div>
+                </div>
+            </div>
+            <div class="article_info">
+                <div class="agence"><img src="{{ url_for('user.static',filename='image/icons8-utilisateur-24.png') }}" alt="Agence"><p>Agence</p></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="lieu"><div><img src="{{ url_for('user.static',filename='image/icons8-location-64.png') }}" alt="lieu"><p>{{ maiso.longitude }}-{{ maiso.lartitude }}</p></div><p><a href="{{ url_for('user.detail',id=maiso.id) }}">Voir Plus</a></p></div>
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+    <div class="avant_foot">
+        <div class="color_background"></div>
+        <div class="info_foot">
+            <h1>LOGO</h1>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p><span>Mail :</span> HomeSearch@gmail.com</p>
+                <p><span>Tel :</span> 0748569941/0546283701</p>
+                <p><span>Localisation :</span> Abidjan zone 4</p>
+            </div>
+            <form action="{{ url_for('user.envoi') }}" method="POST">
+                {{form.hidden_tag()}}
+                <h3>Commentaire</h3>
+                <p>{{form.contenu(cols="40",rows="10")}}</p>
+                <p>{{form.submit}}</p>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p><a href="#"><img src="../static/image/icons8-f-de-facebook-30.png" alt="facebook"></a></p>
+        <p><a href="#"><img src="../static/image/icons8-instagram-30.png" alt="insta"></a></p>
+        <p><a href="#"><img src="../static/image/icons8-twitter-30.png" alt="twinter"></a></p>
+    </footer>
+    <script src="{{ url_for('user.static', filename='js/menu.js') }}"></script>
+</body>
+</html>

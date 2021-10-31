@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ maison.titre }}</h1>
+    <img src="{{ url_for('admin.static',filename='uploads/'+maison.titre+'/'+maison.photo) }}" alt="" style="width: 50px;">
+    <div>
+        <h2>Images</h2>
+        {% for maiso in maison.maison_image %}
+        <img src="{{ url_for('admin.static',filename='uploads/'+maison.titre+'/'+maiso.nom) }}" alt="" style="width: 50px;">
+        <a href="{{ url_for('admin.supprimerphoto', image_id = maiso.id, maison_id= maison.id) }}">Supprimer</a>
+        {% endfor %}
+    </div>
+    <form action="{{ url_for('admin.ajoutphoto', id = maison.id) }}" enctype="multipart/form-data" method="POST">
+        {{form.hidden_tag()}}
+        <div>{{ form.photo.label }}{{ form.photo}}</div>
+        <div>{{ form.submit }}</div>
+    </form>
+</body>
+</html>

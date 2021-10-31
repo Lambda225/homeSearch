@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+}
+body{
+    background-color: #F9F9F9;
+}
+.dessus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.dessus > img{
+    display: none;
+}
+.dessus form{
+    border-radius: 10px;
+    padding: 0;
+    width: 25%;
+    border: solid black 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dessus form input{
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+}
+.vol{
+    display: none;
+}
+.dessus form img{
+    height: 25px;
+    padding: 5px;
+    background-color: #00C0FA;
+    border-radius: 0 10px 10px 0;
+}
+.dessus .user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dessus .user a{
+    text-decoration: black;
+    color: black;
+}
+.dessus .user img{
+    background-color: black;
+    padding: 5px;
+    border-radius: 50%;
+}
+.grand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #00C0FA;
+}
+.grand li{
+    list-style: none;
+}
+.grand a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    margin: 0 30px;
+    font-weight: bold;
+}
+.grand .actif{
+    background-color: white;
+    color: black;
+}
+.grand a:hover{
+    background-color: white;
+    color: black;
+}
+.decouvert{
+    height: 50vh;
+    background: url('../image/pexels-max-vakhtbovych-8134848.jpg') ;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+.color_background{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+.decouvert h1{
+    color: white;
+    text-align: center;
+    font-size: 70px
+}
+.decouvert p{
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+.info{
+    position: absolute;
+}
+.contenu{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+
+.contenu .map img{
+    width:80%;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.contenu .map h2{
+    text-align: center;
+    font-weight: lighter;
+    font-size: 30px;
+}
+.contenu .plus{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+.contenu p{
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+p span{
+    font-weight: bold;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+}
+footer img{
+    margin: 0 50px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+.visible{
+    display: block;
+}
+
+@media only screen and (max-width: 1020px) {
+    .contenu{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contenu img{
+        width: 100%;
+        margin: 0;
+    }
+    .contenu .map{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contenu .plus{
+        margin-top: 20px;
+    }
+    .contenu p{
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 580px){
+    article{
+        width: 68%;
+    }
+    .avant_foot{
+        height: 100vh;
+    }
+    .info_foot h1{
+        width: 100%;
+        text-align: start;
+    }
+    .avant_foot .contact{
+        width: 70%;
+    }
+    .avant_foot .info_foot form{
+        width: 70%;
+    }
+    .info_foot{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    footer img{
+        width: 25px;
+        margin: 0 30px;
+        padding: 5px;
+    }
+    .dessus img{
+        display: block;
+        height: 25px;
+        width: 25px;
+    }
+    .vol{
+        z-index: 10;
+        opacity: .9;
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: fixed;
+    }
+    .vol .user{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .vol .user a{
+        text-decoration: none;
+        color: white;
+    }
+    .vol .user img{
+        height: 30px;
+        width: 30px;
+    }
+    div ul{
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    div li{
+        margin-top: 20px;
+    }
+    div li a{
+        text-decoration: none;
+        color: white;
+    }
+    .grand, .dessus .user, .dessus form{
+        display: none;
+    }
+    .vol > img{
+        transform: rotate(45deg);
+    }
+}

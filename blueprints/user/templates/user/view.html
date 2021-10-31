@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        .contener{
+            width: 100%;
+            position: absolute;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        .btn img{
+            height: 30px;
+            padding: 3px;
+            opacity: 0.6;
+            background-color: black;
+        }
+        .invisible{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contener">
+        <div class="btn">
+            <img src="{{ url_for('user.static', filename='image/icons8-flèche-développer-96.png') }}" alt="" >
+            <img src="{{ url_for('user.static', filename='image/icons8-flèche-réduire-96.png') }}" alt="" class="invisible">
+        </div>
+        <div class="carousel">
+            <div class="owl-carousel owl-theme">
+                {% for image in maison.maison_image %}
+                <div class="item">
+                    <img src="{{ url_for('admin.static',filename='uploads/'+maison.titre+'/'+image.nom) }}" alt="">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('user.static',filename='Js/three.js') }}"></script>
+    <script src="{{ url_for('user.static',filename='Js/OrbitControls.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('user.static',filename='Js/script.js') }}"></script>
+</body>
+
+</html>

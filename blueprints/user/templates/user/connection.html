@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('user.static',filename='/style/connexion.css') }}">
+    <title>Document</title>
+</head >
+<body >
+    <h1>Connexion</h1>
+    <div class="contener">
+        <form action="" method="post">
+            {{form.hidden_tag()}}
+            <h1>Bienvenue</h1>
+            <div><img src="{{ url_for('user.static',filename='/image/icons8-mail-24.png') }}" alt="b">{{ form.mail(placeholder='Mail') }}</div>
+            <div><img src="{{ url_for('user.static',filename='/image/icons8-verrouiller-2-26.png') }}" alt="b">{{ form.password(placeholder='Mots de passe') }}</div>
+            <p>{{form.submit}}</p>
+        </form>
+        <div>
+            <h2>Inscription</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, excepturi eveniet perspiciatis voluptatem atque possimus.</p>
+            <div><a href="{{ url_for('user.inscription') }}">Passer</a></div>
+        </div>
+    </div>
+</body>
+</html>

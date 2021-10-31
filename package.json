@@ -1,0 +1,18 @@
+{
+  "name": "HomeSearch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss -w blueprints/admin/static/css/tailwind.css -o blueprints/admin/static/css/style.css",
+    "tailwind-build": "npx tailwindcss   blueprints/admin/static/css/tailwind.css -o blueprints/admin/static/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.17"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li> <a href="{{ url_for('admin.home') }}">Maison</a></li>
+            <li><a href="{{ url_for('admin.listangence') }}">Agence</a></li>
+        </ul>
+    </nav>
+    {% for agence in agences %}
+        <div>
+            <h2>{{ agence.nom }}</h2>
+            <img src="{{ url_for('admin.static',filename='uploads/'+agence.mail+'/'+agence.photo) }}" alt="" style="width: 50px;">
+            <a href=""></a>
+            <a href="">supprimer</a>
+        </div>
+    {% endfor %}
+        <a href="{{ url_for('admin.ajoutagence') }}">Ajouter agence</a>
+</body>
+</html>

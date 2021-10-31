@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('admin.static',filename='css/style.css') }}">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: montserrat;
+        }
+    </style>
+</head>
+<body>
+    <nav class="flex flex-row-reverse p-5 shadow-sm">
+        <ul class="flex">
+            <li class="mx-10"> <a href="{{ url_for('admin.home') }}" >Maison</a></li>
+            <li class="mx-10"><a href="{{ url_for('admin.listangence') }}">Agence</a></li>
+            <li class="mx-10"><a href="{{ url_for('admin.deconnection') }}">Deconnection</a></li>
+        </ul>
+    </nav>
+    <section class="pt-10">
+        {% for maison in maisons%}
+        <div class="flex flex-wrap justify-between items-center my-5 bg-gray-100 py-5">
+            <h2 class="w-full text-3xl font-bold pb-5 text-center" >{{ maison.titre}}</h2>
+            <div class="w-64 px-10"><img src="{{ url_for('admin.static',filename='uploads/'+maison.titre+'/'+maison.photo) }}" alt="" class="container"></div>
+            <div>
+                <a href="{{ url_for('admin.supprimermaison', id = maison.id) }}" class="px-5">supprimer</a>
+                <a href="{{ url_for('admin.detail', id = maison.id) }}" class="px-5">Plus de detail</a>
+            </div>
+        </div>
+        {% endfor %}
+        <a href="{{ url_for('admin.ajout') }}">Ajouter une maison</a>
+    </section>
+</body>
+</html>

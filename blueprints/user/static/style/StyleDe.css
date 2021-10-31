@@ -1,0 +1,455 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+}
+body{
+    background-color: #F9F9F9;
+}
+.dessus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.dessus > img{
+    display: none;
+}
+.dessus form{
+    border-radius: 10px;
+    padding: 0;
+    width: 25%;
+    border: solid black 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dessus form input{
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+}
+.vol{
+    display: none;
+}
+.dessus form img{
+    height: 25px;
+    padding: 5px;
+    background-color: #00C0FA;
+    border-radius: 0 10px 10px 0;
+}
+.dessus .user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dessus .user a{
+    text-decoration: black;
+    color: black;
+}
+.dessus .user img{
+    background-color: black;
+    padding: 5px;
+    border-radius: 50%;
+}
+.grand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #00C0FA;
+}
+.grand li{
+    list-style: none;
+}
+.grand a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    margin: 0 30px;
+    font-weight: bold;
+}
+.grand .actif{
+    background-color: white;
+    color: black;
+}
+.grand a:hover{
+    background-color: white;
+    color: black;
+}
+.apropros{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:center ;
+}
+.apropros .droit{
+    width: 60%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.droit img:first-child{
+    width: 100%;
+}
+.droit .descrisption{
+    margin-top: 50px;
+    width: 70%;
+    margin-bottom: 50px;
+}
+.droit h3{
+    font-weight: lighter;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.droit .maison_lieu img{
+    width: 60%;
+}
+.apropros .gauche{
+    width: 25%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.gauche .btn_vistite{
+    display: flex;
+    align-items: center;
+}
+.gauche .prix{
+    margin: 20px 0;
+}
+.gauche h3{
+    font-weight: lighter;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.gauche > p{
+    display: flex;
+}
+.gauche > p a{
+    display: block;
+    display: flex;
+    padding: 5px 10px;
+    align-items: center;
+    text-decoration: none;
+    background-color: #20D653;
+    color: white;
+}
+.gauche >p a img{
+    margin-right: 10px;
+    width: 40px;
+} 
+.gauche .prix p{
+    color: #00C0FA;
+    font-size: 20px;
+}
+.gauche .b{
+    margin-bottom: 20px;
+}
+.gauche .info_agence{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gauche .info_agence .dedans{
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.gauche .agence_contact p{
+    display: flex;
+    align-items: center;
+}
+.gauche .agence_contact p img{
+    width: 30px;
+}
+.gauche .info_agence .dedans > p{
+    margin-top: 30px;
+}
+.gauche .info_agence .dedans > p a{
+    text-decoration: none;
+    color: white;
+    background-color: #00C0FA;
+    padding: 10px;
+}
+.gauche .info_agence h3{
+   width: 100%;
+}
+.info_agence div:first-child{
+    text-align: center;
+}
+.info_agence .agence_contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.info_agence .agence_contact a{
+    color: white;
+    text-decoration: none;
+    background-color: #00C0FA;
+    padding: 10px;
+}
+.gauche .info_agence img{
+    width: 150px;
+}
+
+.plus_maisons, .avis{
+    margin-top:100px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.plus_maisons h2, .avis h2{
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    font-weight: lighter;
+    padding-bottom: 50px;
+}
+article{
+    width: 25%;
+    height: 400px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+article .image{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    position: relative;
+}
+article .image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+article .image .vole{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 10px;
+}
+article .image .vole div{
+    padding: 10px;
+    margin-top: 10px;
+}
+article .image .vole .haut{
+    background-color: #00C0FA;
+    color: white;
+}
+article .image .vole .prix{
+    background-color: white;
+    margin-bottom: 10px;
+}
+.article_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+.agence,.lieu{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.agence img{
+    padding: 5px;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.lieu{
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.lieu div{
+    display: flex;
+    align-items: center;
+}
+.lieu div img{
+    width: 30px;
+}
+.color_background{
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+.conteneur{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 25%;
+    height: 400px;
+    background-color: white;
+}
+.conteneur img{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.conteneur p{
+    text-align: center;
+}
+.avant_foot{
+    margin-top: 100px;
+    width: 100%;
+    height: 50vh;
+    background: url('../image/pexels-pixabay-271667.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.info_foot{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+}
+.info_foot .contact{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info_foot .contact p{
+    display: inline;
+}
+.avant_foot .color_background{
+    opacity: 0.8;
+}
+.info_foot h3{
+    font-size: 25px;
+}
+.info_foot h1{
+    padding: 10px 0;
+
+}
+.info_foot form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.info_foot form textarea{
+    width: 250px;
+    resize : none;
+    padding: 5px;
+    height: 150px;
+}
+.info_foot form input{
+    width: 260px;
+    padding: 10px 0;
+    background-color: transparent;
+    border: solid white 2px;
+    color: white;
+    font-weight: bolder;
+}
+.info_foot form input:hover{
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+}
+footer img{
+    margin: 0 50px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+.visible{
+    display: block;
+}
+@media only screen and (max-width: 580px){
+    article{
+        width: 68%;
+    }
+    .avant_foot{
+        height: 100vh;
+    }
+    .info_foot h1{
+        width: 100%;
+        text-align: start;
+    }
+    .avant_foot .contact{
+        width: 70%;
+    }
+    .avant_foot .info_foot form{
+        width: 70%;
+    }
+    .info_foot{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    footer img{
+        width: 25px;
+        margin: 0 30px;
+        padding: 5px;
+    }
+    .dessus img{
+        display: block;
+        height: 25px;
+        width: 25px;
+    }
+    .vol{
+        z-index: 10;
+        opacity: .9;
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        position: fixed;
+    }
+    .vol .user{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .vol .user a{
+        text-decoration: none;
+        color: white;
+    }
+    .vol .user img{
+        height: 30px;
+        width: 30px;
+    }
+    div ul{
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    div li{
+        margin-top: 20px;
+    }
+    div li a{
+        text-decoration: none;
+        color: white;
+    }
+    .grand, .dessus .user, .dessus form{
+        display: none;
+    }
+    .vol > img{
+        transform: rotate(45deg);
+    }
+}

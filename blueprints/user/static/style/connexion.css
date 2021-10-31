@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+}
+body{
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body > h1{
+    font-size: 50px;
+    margin: 50px 0;
+}
+.contener{
+    display: flex;
+    width: 60%;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.contener h1{
+    font-size: 20px;
+}
+.contener > div{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+    background-color: #00C0FA;
+}
+.contener > div h2, .contener > div p{
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+.contener > div div {
+    display: flex;
+    justify-content: center;
+}
+.contener > div div a{
+    text-decoration: none;
+    padding: 10px 20px;
+    border: solid white 1px;
+    font-size: 13px;
+    border-radius: 3px;
+    color: white;
+}
+.contener form img{
+    width: 25px;
+    margin-right: 20px;
+}
+.contener form{
+    width: 50%;
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+}
+.contener form h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.contener form div{
+    box-shadow: 0 0 3px #00C0FA;
+}
+.contener form input{
+    border: none;
+    background: none;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+}
+.contener form > div{
+    display: flex;
+    border-radius: 43px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.contener form > p{
+    display: flex;
+    justify-content: center;
+}
+.contener form > p input{
+    padding: 10px 20px;
+    color: white;
+    width: auto;
+    border-radius: 3px;
+    background-color: #00C0FA;
+}
+
+@media screen and (max-width: 1020px) {
+    body{
+        height: auto;
+    }
+    .contener{
+        flex-wrap: wrap;
+    }
+    .contener > div{
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+    .contener form{
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+}
+@media screen and (max-width: 710px) {
+    .contener{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .contener{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 375px){
+    .contener form{
+        padding: 25px;
+    }
+}
