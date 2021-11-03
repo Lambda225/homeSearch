@@ -378,8 +378,77 @@ footer img{
 .visible{
     display: block;
 }
+.conteneur{
+    margin-top: 20px;
+}
+@media only screen and (max-width: 1020px) {
+    article, .conteneur{
+        width: 32%;
+    }
+}
+@media only screen and (max-width: 800px){
+    article, .conteneur{
+        width: 40%;
+    }
+    .gauche .b {
+        width: 80%;
+    }
+    .dedans{
+        width: 100%;
+    }
+    .dedans > p{
+        width: 100%;
+        text-align: center;
+    }
+    .apropros{
+        display: flex;
+        margin-top: 0;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+    .apropros .gauche{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    .droit .maison_lieu img{
+        width: 70%;
+    }
+    .apropros .droit{
+        width: 100%;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+    .apropros .droit .maison_lieu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .avant_foot{
+        height: 60vh;
+    }
+    .info_foot{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .info_foot h1{
+        width: 100%;
+        text-align: center;
+    }
+    .avant_foot .contact{
+        width: 50%;
+        align-items: center;
+    }
+    .avant_foot .info_foot form{
+        width: 50%;
+        align-items: center;
+    }
+}
 @media only screen and (max-width: 580px){
-    article{
+    article, .conteneur{
         width: 68%;
     }
     .avant_foot{
